@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Object & Array</title>
+</head>
+
+<body>
+  <h1>JavaScript Object</h1>
+  <p>JavaScript objects are variables which contain many values. They are made up of pairs of keys (names) and values.
+  </p>
+  <p id="myobj"></p>
+
+  <hr>
+  <h1>JavaScript Arrays</h1>
+  <p>Arrays are used to store multiple values in a single variable. They are list-like objects </p>
+  <p id="myarr"></p>
+  <p id="len"></p>
+  <p id="sort"></p>
+  <p id="join"></p>
+  <p id="sh"></p>
+  <p id="ush"></p>
+  <p id="merge"></p>
+  <p id="pos"></p>
+  <p id="copy"></p>
+  <p id="splice"></p>
+  <p id="slice"></p>
+  <p id="pos"></p>
+
+
+  <script>
+
+    //creating object by new keyword 
+    let person = new Object;
+
+
+    //adding properties to Object 
+    person.firstName = "Anjali";
+    person.lastName = "Kumari";
+    person.age = 21;
+    person.weight = 45;
+    person.height = 156;
+
+
+    //deleting property of object
+    delete person.weight;
+    delete person.weight;
+
+    //creating function in object
+    person.greet = function () {
+      return "Hello " + this.firstName;
+    };
+    console.log(person);
+    console.log(person.greet())
+
+    //display an object
+    document.getElementById("myobj").innerHTML = person.firstName + " " + person.lastName + " " + person.age;
+
+
+    //crating an array
+    let cities = new Array("Mumabai", "Delhi", "Kolkata");
+
+    //adding items in array
+    cities.push("pune");
+    cities.push("Ranchi", "Patna");
+
+    //accessing element
+    let city = cities[1];
+
+    //changing the element
+    cities[1] = "Hyderabad";
+
+    //display array
+    document.getElementById("myarr").innerHTML = cities;
+
+    //deleting the element
+    cities.pop();
+
+    //methods in array
+    const len = cities.length;
+    document.getElementById("len").innerHTML = "length of array : " + len;
+
+    const sort = cities.sort();
+    document.getElementById("sort").innerHTML = "after sorting :" + sort;
+
+    document.getElementById("join").innerHTML = cities.join(" * ");
+
+    // document.getElementById("sh").innerHTML =  cities.shift();
+
+    // document.getElementById("ush").innerHTML = cities.unshift("Lucknow");
+
+    const states = ["Telangana", "west bengal", "maharashtra", "Jharkhand", ""]
+    const place = states.concat(cities);
+    document.getElementById("merge").innerHTML = place
+
+    let position = (sort.indexOf("Kolkata")) + 1;
+    document.getElementById("pos").innerHTML = "kolkata is found in position " + position;
+
+    document.getElementById("copy").innerHTML = cities.copyWithin(2, 0, 2);
+
+
+    // The first parameter (2) defines the position where new elements should be added (spliced in).
+    //The second parameter (0) defines how many elements should be removed.
+    // The rest of the parameters ("Lemon" , "Kiwi") define the new elements to be added.
+
+
+    cities.splice(2, 0, "Ranchi", "patna");
+    document.getElementById("splice").innerHTML = "splice cities" + cities;
+
+
+    document.getElementById("slice").innerHTML = "slicing cities:" + cities + "<br><br>" + cities.slice(1);
+
+
+
+
+
+  </script>
+</body>
+
+</html>
