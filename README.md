@@ -17,3 +17,11 @@ It is todo list. In this you can add or delete your list.
 ### sample video
 https://github.com/user-attachments/assets/2e66009f-1589-4038-89c5-63ac2f8e983b
 
+## js-object : JS Object and Array
+  Object : JavaScript objects are collections of key-value pairs.
+  Array : arrays are used to store multiple values in a single variable. 
+
+  The purpose of creating this file is to apply the concept of objects and arrays in javascript.
+
+### screenshot 
+![Screenshot 2024-07-17 110241](https://github.com/user-attachments/assets/5127f246-346c-4bb2-a8a1-a4546bad4405)
