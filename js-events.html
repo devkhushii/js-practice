@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        height: 100px;
+        width: 100px;
+        background-color: rgb(30, 50, 70);
+        color: white;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <button onclick="console.log('button was clicked');alert('hello!')">
+        click me!
+    </button>
+
+    <button ondblclick="console.log('button was clicked 2x')">
+        click me 2 times!
+    </button>
+    <div onmouseover="console.log('you are inside div')">this is a box</div>
+
+    <button id="btn2">btn2</button>
+
+    <button id="btn3" onclick="console.log('hello')">btn3</button>
+    <div>this is a box</div>
+
+    <button id="btn4">btn4</button>
+    <div>this is a box</div>
+
+    <button id="btn5">btn5 </button>
+ 
+    <button id="btn6">btn6</button>
+
+    <script>
+
+        let btn2 = document.querySelector("#btn2");
+
+        btn2.onclick = () => {
+            console.log("btn2 was clicked");
+            let a = 25;
+            a++;
+            console.log(a); //26
+        };
+
+        //event handle
+
+        let div = document.querySelector("div");
+        div.onmouseover = () => {
+            console.log("you are inside div");
+        };
+
+        //for object
+
+        let btn3 = document.querySelector("#btn3");
+        btn3.onclick = (evt) => {
+            console.log(evt);
+            console.log(evt.type);
+            console.log(evt.target);
+            console.log(evt.clientX, evt.clientY);
+        };
+
+
+        //let div = document.querrySelector("div");
+        div.onmouseover = (evt) => {
+            console.log(evt);
+            console.log(evt.type);
+            console.log(evt.target);
+            console.log(evt.clientX, evt.clientY);
+        };
+
+        //event listner
+
+        let btn5 = document.querySelector("#btn5");
+        btn5.addEventListener("click", (evt) => {
+            console.log("button5 was clicked - handler0");
+            console.log(evt);
+            console.log(evt.type);
+        });
+
+      
+
+        let btn6 = document.querySelector("#btn6");
+
+        
+
+        btn6.addEventListener("click", () => {
+            console.log("button6 was clicked - handler1");
+        });
+
+        const handler3 = () => {
+            console.log("button6 was clicked - handler2");
+        };
+
+        btn6.addEventListener("click", handler3);
+
+
+        btn6.addEventListener("click", () => {
+            console.log("button6 was clicked - handler3");
+        });
+
+
+        btn6.removeEventListener("click", handler3)
+
+
+
+    </script>
+</body>
+
+</html>
