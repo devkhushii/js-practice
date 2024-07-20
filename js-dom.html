@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        background-color: bisque;
+        font-size: 15px;
+    }
+</style>
+<body>
+
+    <div id="main">
+    <h1 id="title">JavaScript DOM </h1>
+    <div>
+    <p id="message" style="background-color: aqua;">DOM stands for Document Object Model</p>
+    </div>
+    
+  
+    <p class = "desc">The DOM provides fuction that allow you to add, remove and modify parts of the document effectively. </p>
+
+    <div class="container">
+    <p class = "desc">It represent an HTML document as a tree of nodes.</p>
+    <p class = "desc">Any node has relationships of other nodes in the DOM tree, and it is same as described in the traditional familt tree.</p>
+    </div>
+    <input type="radio" name="language" value="JS" >
+    <label for="JS">JS</label>
+    <br>
+    <input type="radio" name="language" value="Python" >
+    <label for="Python">Python</label>
+    <br>
+    <input type = "text" id="username2" placeholder="username" >
+    <br>
+     <input type = "text" id="username" placeholder="username" style="background-color:red; font-size: 20px;">
+
+     
+    </div>
+
+    <script>
+        let msg = document.getElementById("message");
+        console.log(msg);
+        
+        let btn = document.getElementsByName("language");
+        console.log(btn);
+
+        let heading = document.getElementsByTagName("h1");
+        console.log(heading);
+
+        let description = document.getElementsByClassName("container");
+        console.log(description);
+
+        let sel = document.querySelector(".desc");
+        console.log(sel);
+
+        let sele = document.querySelectorAll(".desc");
+        console.log(sele);
+
+        let txt = document.querySelector("#message");
+        console.log(txt.parentNode);
+         
+        let div = document.createElement("div");
+        div.innerHTML= "<p>The document.createElement() accepts an HTML tag name and returns a new node with element type.</p>";
+        
+        div.id = "id1";
+        div.className = "class1"
+        document.body.appendChild(div);
+
+        console.log(div);
+
+        let menu = document.createElement("div");
+        menu.innerHTML="<p>we use appendChild() method to add a node to the end of the child nodes of a specified parent node. It can be used to move an existing childnode to the new position within the document.</p>";
+        menu.id ="appendchlid";
+       
+        document.body.appendChild(menu);
+         
+        console.log(document.getElementById("id1").textContent);
+        console.log(document.getElementById("message").innerText);
+        
+        
+        
+        let node = document.getElementById("main");
+        //node.removeChild(node.lastElementChild);
+         
+        //We use insertBefore() method to insert a new node before an existing node as a child node of a parent node
+        // node.insertBefore(newNode , node.lastElementChild);
+        
+
+       let inputBox = document.getElementById("username");
+       console.log(inputBox.attributes);
+       console.log(inputBox.getAttribute("type"));
+
+       inputBox.setAttribute("class","user");
+       console.log(inputBox);
+
+       console.log(inputBox.hasAttribute("class"));
+        
+       //inputBox.removeAttribute("placeholder");
+
+       console.log(inputBox.style);
+       console.log(inputBox.style.backgroundColor);
+       inputBox.style.padding = "10px";
+       //inputBox.style.cssText= "width:200px";
+       inputBox.style.cssText += "width:200px; height:10px";
+       console.log(inputBox.style);
+
+       let inputBox2 = document.getElementById("username2");
+       console.log(window.getComputedStyle(inputBox2).fontSize);
+       
+       let title = document.getElementById("title");
+       title.className += "main "
+       title.classList += "new  new1"
+       console.log(title.classList);
+
+    </script>
+</body>
+</html>
+
