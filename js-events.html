@@ -17,6 +17,7 @@
 </style>
 
 <body>
+    <!-- Button with inline event handler -->
     <button onclick="console.log('button was clicked');alert('hello!')">
         click me!
     </button>
@@ -29,13 +30,12 @@
     <button id="btn2">btn2</button>
 
     <button id="btn3" onclick="console.log('hello')">btn3</button>
+
     <div>this is a box</div>
 
-    <button id="btn4">btn4</button>
-    <div>this is a box</div>
-
+     <!-- Buttons to be handled by JavaScript -->
     <button id="btn5">btn5 </button>
- 
+
     <button id="btn6">btn6</button>
 
     <script>
@@ -46,17 +46,15 @@
             console.log("btn2 was clicked");
             let a = 25;
             a++;
-            console.log(a); //26
+            console.log(a);
         };
 
-        //event handle
 
         let div = document.querySelector("div");
         div.onmouseover = () => {
             console.log("you are inside div");
         };
 
-        //for object
 
         let btn3 = document.querySelector("#btn3");
         btn3.onclick = (evt) => {
@@ -67,7 +65,6 @@
         };
 
 
-        //let div = document.querrySelector("div");
         div.onmouseover = (evt) => {
             console.log(evt);
             console.log(evt.type);
@@ -75,7 +72,7 @@
             console.log(evt.clientX, evt.clientY);
         };
 
-        //event listner
+
 
         let btn5 = document.querySelector("#btn5");
         btn5.addEventListener("click", (evt) => {
@@ -84,11 +81,9 @@
             console.log(evt.type);
         });
 
-      
+
 
         let btn6 = document.querySelector("#btn6");
-
-        
 
         btn6.addEventListener("click", () => {
             console.log("button6 was clicked - handler1");
